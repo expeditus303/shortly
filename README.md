@@ -1,2 +1,2 @@
 # shortly
-"Shortly" is a URL shortener backend application built with Node.js and Postgres. It provides an easy way to shorten long URLs and supports custom short URLs.
+"Shortly" is a Node.js and Postgres-based backend application that provides URL shortening functionality for web-based platforms. The application is designed to help users create shortened URLs that are easy to remember, share, and track. With a simple API and a user-friendly interface, "Shortly" makes it easy to create custom shortened URLs for any web-based platform. By leveraging the power of Node.js and Postgres, the application is fast, reliable, and scalable, making it the perfect solution for businesses and individuals who need a powerful and flexible URL shortening platform.
