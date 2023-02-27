@@ -1,0 +1,10 @@
+import Joi from "joi";
+
+export const signupModel = Joi.object({
+  name: Joi.string().min(3).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().required(),
+  confirmPassword: Joi.string().valid(Joi.ref("password")).required().messages({
+    "any.only": "Passwords must match",
+  }),
+});
