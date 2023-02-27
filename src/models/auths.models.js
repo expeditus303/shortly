@@ -8,3 +8,8 @@ export const signupModel = Joi.object({
     "any.only": "Passwords must match",
   }),
 });
+
+export const signinModel = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().required()
+})
