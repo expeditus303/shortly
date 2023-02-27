@@ -59,6 +59,10 @@ export async function tokenValidation(req, res, next) {
 
     if (tokenExists.rowCount === 0) return res.sendStatus(401);
 
+    const userId = tokenExists.rows[0].userId
+
+    res.locals.userId = userId
+
     next();
   } catch (err) {
     res.status(500).send(err.message);
