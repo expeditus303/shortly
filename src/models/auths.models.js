@@ -13,3 +13,7 @@ export const signinModel = Joi.object({
   email: Joi.string().email().required(),
   password: Joi.string().required()
 })
+
+// export const tokenModel = Joi.object({
+//   authorization: Joi.string().required()
+// })
