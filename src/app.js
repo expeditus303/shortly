@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import authsRoutes from "./routes/auths.routes.js";
-import urlRoutes from "./routes/urls.routes.js";
+import urlsRoutes from "./routes/urls.routes.js";
+import usersRoutes from "./routes/users.routes.js";
 
 dotenv.config();
 
@@ -11,7 +12,8 @@ app.use(express.json())
 app.use(cors())
 
 app.use(authsRoutes)
-app.use(urlRoutes)
+app.use(urlsRoutes)
+app.use(usersRoutes)
 
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`))
