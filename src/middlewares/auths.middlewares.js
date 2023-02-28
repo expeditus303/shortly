@@ -37,8 +37,6 @@ export async function checkEmailPassword(req, res, next) {
 
     res.locals.user = user;
 
-    console.log(user.id);
-
     next();
   } catch (err) {
     res.status(500).send(err.message);
