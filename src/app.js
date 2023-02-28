@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authsRoutes from "./routes/auths.routes.js";
 import urlsRoutes from "./routes/urls.routes.js";
 import usersRoutes from "./routes/users.routes.js";
+import rankingRoutes from "./routes/ranking.routes.js";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(cors())
 app.use(authsRoutes)
 app.use(urlsRoutes)
 app.use(usersRoutes)
+app.use(rankingRoutes)
 
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`))

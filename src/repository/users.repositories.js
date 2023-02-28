@@ -1,7 +1,8 @@
 import { connectiondb } from "../database/database.connection.js";
 
 export function getUserData(userId) {
-    return connectiondb.query(`SELECT 
+  return connectiondb.query(`
+    SELECT 
     u.id AS "id",
     u.name AS "name",
     SUM(urls."visitCount") AS "visitCount",
@@ -13,11 +14,13 @@ export function getUserData(userId) {
         'visitCount', urls."visitCount"
       )
     ) AS "shortenedUrls"
-  FROM 
+    FROM 
     users AS u
     LEFT JOIN urls ON u.id = urls."userId"
-  WHERE 
+    WHERE 
     u.id = $1
-  GROUP BY 
-    u.id;`, [userId])
+    GROUP BY 
+    u.id;`,
+    [userId]
+  );
 }
