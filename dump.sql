@@ -95,7 +95,7 @@ CREATE TABLE public.users (
     name text NOT NULL,
     email text NOT NULL,
     password text NOT NULL,
-    "createdAt" date DEFAULT now() NOT NULL
+    "createdAt" timestamp without time zone DEFAULT now() NOT NULL
 );
 
 
@@ -176,16 +176,16 @@ INSERT INTO public.urls VALUES (23, 4, 'P9X9gmI5Jh', 'https://letmegooglethat.co
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.users VALUES (1, 'Ricardo', 'ricardo@gmail.com', '$2b$10$G0IKn2O8UQYFDMg.olENgOv1hJ0x0ubT/O./Iqkvgho1qAl7qEzWe', '2023-02-27');
-INSERT INTO public.users VALUES (2, 'Ana', 'ana@gmail.com', '$2b$10$FKy96RvjdubgoAIagBk.WullgKruAurZDSKa7J.eZIxaQRWXmfqK.', '2023-02-27');
-INSERT INTO public.users VALUES (3, 'João', 'bigode@gmail.com', '$2b$10$9LJ0QLkgzT3w.cR7FBrz4uiyUtm25yQv9suycJxV.RYiRjGv9GcES', '2023-02-27');
-INSERT INTO public.users VALUES (4, 'Lucas', 'lucas@gmail.com', '$2b$10$YNEsM4LfDtcGz7.88tpjOugtKYBfe/iUHgGg6Veq9BJH6lAuMkTGa', '2023-02-27');
-INSERT INTO public.users VALUES (5, 'Deisy', 'deisy@gmail.com', '$2b$10$DHroqyLVHBTfm.2esNS93u8CdO2ew0AhlxjrSBzdAsa1KW7rspZ26', '2023-02-27');
-INSERT INTO public.users VALUES (6, 'Rafael', 'rafael@gmail.com', '$2b$10$e1OCTcoOjybjyuFxCWczbe01.Y3Ko3mXQnaBG5kyuH2hJa1LDa1Wy', '2023-02-27');
-INSERT INTO public.users VALUES (7, 'Diva', 'diva@gmail.com', '$2b$10$aLt42IGN/Z6dZIofBcNFv.LVcWIKoSIwHd.n.ytlVJnHrXTPhFZ9G', '2023-02-27');
-INSERT INTO public.users VALUES (8, 'Ivanyr', 'Ivanyr@gmail.com', '$2b$10$z1FyF5gozfzNme0WWs38hO6nYRMKwytbWc3/02XnY1FlJLzNQ6/Ni', '2023-02-27');
-INSERT INTO public.users VALUES (9, 'Diogenes', 'diogenes@gmail.com', '$2b$10$eDu8VTnkS.ejiQ9uab9uu.j4/4ZQUD7NVMKfVa.S6pywPPAjwrLzu', '2023-02-27');
-INSERT INTO public.users VALUES (10, 'sonia', 'sonia@gmail.com', '$2b$10$I9kTqK0pDcL6qh16e5nWtegIWh0yWnupcUt.XzOHhVwdyt7642hwa', '2023-02-27');
+INSERT INTO public.users VALUES (1, 'Ricardo', 'ricardo@gmail.com', '$2b$10$G0IKn2O8UQYFDMg.olENgOv1hJ0x0ubT/O./Iqkvgho1qAl7qEzWe', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (2, 'Ana', 'ana@gmail.com', '$2b$10$FKy96RvjdubgoAIagBk.WullgKruAurZDSKa7J.eZIxaQRWXmfqK.', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (3, 'João', 'bigode@gmail.com', '$2b$10$9LJ0QLkgzT3w.cR7FBrz4uiyUtm25yQv9suycJxV.RYiRjGv9GcES', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (4, 'Lucas', 'lucas@gmail.com', '$2b$10$YNEsM4LfDtcGz7.88tpjOugtKYBfe/iUHgGg6Veq9BJH6lAuMkTGa', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (5, 'Deisy', 'deisy@gmail.com', '$2b$10$DHroqyLVHBTfm.2esNS93u8CdO2ew0AhlxjrSBzdAsa1KW7rspZ26', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (6, 'Rafael', 'rafael@gmail.com', '$2b$10$e1OCTcoOjybjyuFxCWczbe01.Y3Ko3mXQnaBG5kyuH2hJa1LDa1Wy', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (7, 'Diva', 'diva@gmail.com', '$2b$10$aLt42IGN/Z6dZIofBcNFv.LVcWIKoSIwHd.n.ytlVJnHrXTPhFZ9G', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (8, 'Ivanyr', 'Ivanyr@gmail.com', '$2b$10$z1FyF5gozfzNme0WWs38hO6nYRMKwytbWc3/02XnY1FlJLzNQ6/Ni', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (9, 'Diogenes', 'diogenes@gmail.com', '$2b$10$eDu8VTnkS.ejiQ9uab9uu.j4/4ZQUD7NVMKfVa.S6pywPPAjwrLzu', '2023-02-27 00:00:00');
+INSERT INTO public.users VALUES (10, 'sonia', 'sonia@gmail.com', '$2b$10$I9kTqK0pDcL6qh16e5nWtegIWh0yWnupcUt.XzOHhVwdyt7642hwa', '2023-02-27 00:00:00');
 
 
 --
