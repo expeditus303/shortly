@@ -9,4 +9,4 @@ export const connectiondb = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-if (process.env.MODE === "prod") connection.ssl = true;
+if (process.env.MODE === "prod") connectiondb.ssl = true;
