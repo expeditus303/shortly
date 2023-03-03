@@ -1,7 +1,8 @@
 import { nanoid } from "nanoid";
-import { connectiondb } from "../database/database.connection.js";
 import {
+  checkUrl,
   createShortUrl,
+  deleteUrl,
   getUrl,
   getUrlData,
 } from "../repositories/urls.repository.js";
@@ -63,14 +64,11 @@ export async function deleteUrl(req, res) {
   const userId = res.locals.userId;
 
   try {
-    const checkUrlExists = await connectiondb.query(`SELECT * FROM urls WHERE id = $1`, [urlId])
+    const checkUrlExists = await checkUrl(urlId)
 
     if (checkUrlExists.rowCount === 0) return res.sendStatus(404)
 
-    const deleteUrl = await connectiondb.query(
-      `DELETE FROM urls WHERE id = $1 AND "userId" = $2`,
-      [urlId, userId]
-    );
+    const deleteUrl = await deleteUrl(urlId, userId)
 
     if (deleteUrl.rowCount === 0) return res.sendStatus(401)
 

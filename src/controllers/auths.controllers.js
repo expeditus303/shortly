@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import { connectiondb } from '../database/database.connection.js';
 import { v4 as uuid } from 'uuid';
 import { checkSessionExists, createNewUser, createSession } from '../repositories/auths.repository.js';
 
