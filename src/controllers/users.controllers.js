@@ -1,4 +1,4 @@
-import { getUserData } from "../repository/users.repositories.js"
+import { getUserData } from "../repositories/users.repository.js"
 
 export async function userInfo(req, res) {
     const userId = res.locals.userId

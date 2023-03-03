@@ -4,7 +4,7 @@ import {
   createShortUrl,
   getUrl,
   getUrlData,
-} from "../repository/urls.repositories.js";
+} from "../repositories/urls.repository.js";
 
 export async function shortenUrl(req, res) {
   const { url } = req.body;
