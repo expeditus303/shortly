@@ -1,4 +1,4 @@
-import { connectiondb } from "../database/database.connection";
+import { connectiondb } from "../database/database.connection.js";
 
 export function getRankingDB() {
     return connectiondb.query(`SELECT

@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import {
   checkUrl,
   createShortUrl,
-  deleteUrl,
+  deleteUrlDB,
   getUrl,
   getUrlData,
 } from "../repositories/urls.repository.js";
@@ -68,7 +68,7 @@ export async function deleteUrl(req, res) {
 
     if (checkUrlExists.rowCount === 0) return res.sendStatus(404)
 
-    const deleteUrl = await deleteUrl(urlId, userId)
+    const deleteUrl = await deleteUrlDB(urlId, userId)
 
     if (deleteUrl.rowCount === 0) return res.sendStatus(401)
 

@@ -25,7 +25,7 @@ export function checkUrl(urlId) {
   return connectiondb.query(`SELECT * FROM urls WHERE id = $1`, [urlId])
 }
 
-export function deleteUrl(urlId, userId) {
+export function deleteUrlDB(urlId, userId) {
   return connectiondb.query(
     `DELETE FROM urls WHERE id = $1 AND "userId" = $2`,
     [urlId, userId]
