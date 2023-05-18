@@ -1,7 +1,9 @@
 import { StatusCodes } from "http-status-codes";
 
 const errorsStatusCode = {
-    UnprocessableEntityError: StatusCodes.UNPROCESSABLE_ENTITY
+    UnprocessableEntityError: StatusCodes.UNPROCESSABLE_ENTITY,
+    ConflictError: StatusCodes.CONFLICT
+
 }
 
 function errorsMiddleware(err, req, res, next){
