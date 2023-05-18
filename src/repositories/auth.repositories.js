@@ -1,6 +1,6 @@
 import db from "../config/database.connection.js";
 
-function findByEmail(email) {
+function findUserByEmail(email) {
     return db.query(`SELECT * FROM users WHERE email =$1`, [email])
 }
 
@@ -12,10 +12,15 @@ function createSession(id, token) {
     return db.query(`INSERT INTO sessions ("userId", token) VALUES ($1, $2)`, [id, token])
 }
 
-const usersRepositories = {
-    findByEmail,
-    createUser,
-    createSession
+function findSessionByToken(token){
+    return db.query(`SELECT * FROM sessions WHERE token=$1`, [token])
 }
 
-export default usersRepositories
+const authRepositories = {
+    findUserByEmail,
+    createUser,
+    createSession,
+    findSessionByToken
+}
+
+export default authRepositories

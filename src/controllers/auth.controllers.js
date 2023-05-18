@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import authServices from "../services/users.services.js";
+import authServices from "../services/auth.services.js";
 
 async function signUp(req, res, next) {
 
