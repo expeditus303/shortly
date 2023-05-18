@@ -7,8 +7,15 @@ const signUp = joi.object({
     confirmPassword: joi.string().valid(joi.ref("password")).messages({'any.only': 'Passwords do not match'}).required(),
 })
 
+const signIn = joi.object({
+    email: joi.string().email({ minDomainSegments: 2, maxDomainSegments: 3}).trim().required(),
+    password: joi.string().min(4).max(100).required(),
+
+})
+
 const authSchemas = {
-    signUp
+    signUp,
+    signIn
 }
 
 export default authSchemas

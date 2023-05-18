@@ -10,9 +10,14 @@ function conflict(message = "Conflict") {
     return errorFactory("ConflictError", message)
 }
 
+function unauthorized(message = "Unauthorized"){
+    return errorFactory("UnauthorizedError", message)
+}
+
 const error = {
     unprocessableEntity,
-    conflict
+    conflict,
+    unauthorized
 }
 
 export default error

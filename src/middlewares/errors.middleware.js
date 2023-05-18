@@ -2,7 +2,8 @@ import { StatusCodes } from "http-status-codes";
 
 const errorsStatusCode = {
     UnprocessableEntityError: StatusCodes.UNPROCESSABLE_ENTITY,
-    ConflictError: StatusCodes.CONFLICT
+    ConflictError: StatusCodes.CONFLICT,
+    UnauthorizedError: StatusCodes.UNAUTHORIZED,
 
 }
 

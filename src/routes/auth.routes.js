@@ -6,5 +6,7 @@ import authControllers from "../controllers/auth.controllers.js";
 const authRoutes = Router()
 
 authRoutes.post("/signup", schemasMiddleware(authSchemas.signUp), authControllers.signUp)
+authRoutes.post("/signin", schemasMiddleware(authSchemas.signIn), authControllers.signIn)
+
 
 export default authRoutes
