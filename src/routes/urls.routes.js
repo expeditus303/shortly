@@ -9,5 +9,6 @@ const urlsRoutes = Router()
 urlsRoutes.get("/urls/open/:shortUrl", schemasMiddleware(urlsSchemas.shortUrl, "params"), urlsControllers.openShortUrl)
 urlsRoutes.get("/urls/:id", schemasMiddleware(urlsSchemas.id, "params") , urlsControllers.getById)
 urlsRoutes.post("/urls/shorten", authMiddleware, schemasMiddleware(urlsSchemas.create), urlsControllers.create)
+urlsRoutes.delete("/urls/:id", schemasMiddleware(urlsSchemas.id, "params"), authMiddleware, urlsControllers.deleteById)
 
 export default urlsRoutes

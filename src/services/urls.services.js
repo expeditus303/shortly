@@ -14,7 +14,7 @@ async function openShortUrl(req) {
 async function getById(req) {
     const { id } = req.params
 
-    const { rows: [url] } = await urlsRepositories.getById(id)
+    const { rowCount: [url] } = await urlsRepositories.getById(id)
     if (!url) throw error.notFound("Oops! The short URL you're looking for doesn't exist")
 
     return url
@@ -31,10 +31,23 @@ async function create(req, res) {
     return shortUrl
 }
 
+async function deleteById(req, res){
+    const { id: shortUrlId } = req.params
+    const { userId } = res.locals
+
+    const { rows: [{deletion_status}]} = await urlsRepositories.deleteById(shortUrlId, userId)
+
+    if(deletion_status === "Mismatched userId") throw error.unauthorized()
+    if(deletion_status === "Mismatched id") throw error.notFound()
+
+    return 
+}
+
 const urlsServices = {
     openShortUrl,
     getById,
     create,
+    deleteById
 }
 
 export default urlsServices

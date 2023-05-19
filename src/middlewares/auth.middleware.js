@@ -6,10 +6,10 @@ async function authMiddleware(req, res, next){
     const { authorization } = req.headers
     const token = authorization?.replace("Bearer ", "")
 
-    const isTokenValid = uuidValidate(token)
-    if(!isTokenValid) throw error.unauthorized("Invalid or missing authentication token")
-
     try {
+        const isTokenValid = uuidValidate(token)
+        if(!isTokenValid) throw error.unauthorized("Invalid or missing authentication token")
+
         const {rows: [existingSession]} = await authRepositories.findSessionByToken(token)
         if(!existingSession) throw error.unauthorized("User not found for the given authentication token")
         

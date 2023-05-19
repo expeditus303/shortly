@@ -31,10 +31,21 @@ async function create(req, res, next) {
     }
 }
 
+async function deleteById(req, res, next){
+    try {
+        await urlsServices.deleteById(req, res)
+
+        res.sendStatus(StatusCodes.NO_CONTENT)
+    } catch (err) {
+        next(err)
+    }
+}
+
 const urlsControllers = {
     create,
     getById,
-    openShortUrl
+    openShortUrl,
+    deleteById
 }
 
 export default urlsControllers
