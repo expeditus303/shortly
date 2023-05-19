@@ -3,13 +3,20 @@ import usersRepositories from "../repositories/users.repositories.js"
 async function getUserData(res){
     const { userId } = res.locals
 
-    const userData = await usersRepositories.getUserData(userId)
+    const {rows: [userData]} = await usersRepositories.getUserData(userId)
 
-    return userData.rows
+    return userData
+}
+
+async function getRanking(){
+    const {rows: ranking} = await usersRepositories.getRanking()
+
+    return ranking
 }
 
 const usersServices = {
-    getUserData
+    getUserData,
+    getRanking
 }
 
 export default usersServices

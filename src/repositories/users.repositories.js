@@ -13,6 +13,7 @@ function getUserData(userId) {
     SELECT 
     u.id, 
     u.name,
+    SUM(s."visitCount") AS "visitCount",
     jsonb_agg(jsonb_build_object('id', s.id, 'shortUrl', s."shortUrl", 'url', s.url, 'visitCount', s."visitCount")) AS "shortenedUrls"
   FROM 
     users AS u
@@ -20,15 +21,19 @@ function getUserData(userId) {
   WHERE 
     u.id = $1
   GROUP BY 
-    u.id, 
-    u.name;
+    u.id
     `, [userId])
+}
+
+function getRanking(){
+    return db.query(``)
 }
 
 const usersRepositories = {
     findByEmail,
     createUser,
-    getUserData
+    getUserData,
+    getRanking
 }
 
 export default usersRepositories

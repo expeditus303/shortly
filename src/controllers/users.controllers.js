@@ -11,8 +11,19 @@ async function getUserData(req, res, next) {
     }
 }
 
+async function getRanking(req, res, next){
+    try {
+        const ranking = await usersServices.getRanking()
+
+        res.status(StatusCodes.OK).send(ranking)
+    } catch (err) {
+        next(err)
+    }
+}
+
 const usersControllers = {
-    getUserData
+    getUserData,
+    getRanking
 }
 
 export default usersControllers
