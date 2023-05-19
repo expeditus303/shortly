@@ -28,7 +28,7 @@ async function signIn(req) {
 
     await authRepositories.createSession(existingUser.id, token)
     
-    return token
+    return {token}
 }
 
 const authServices = {
