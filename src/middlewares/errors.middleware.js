@@ -4,6 +4,7 @@ const errorsStatusCode = {
     UnprocessableEntityError: StatusCodes.UNPROCESSABLE_ENTITY,
     ConflictError: StatusCodes.CONFLICT,
     UnauthorizedError: StatusCodes.UNAUTHORIZED,
+    NotFoundError: StatusCodes.NOT_FOUND,
 
 }
 

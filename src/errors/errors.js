@@ -14,10 +14,15 @@ function unauthorized(message = "Unauthorized"){
     return errorFactory("UnauthorizedError", message)
 }
 
+function notFound(message = "Not Found"){
+    return errorFactory("NotFoundError", message)
+}
+
 const error = {
     unprocessableEntity,
     conflict,
-    unauthorized
+    unauthorized,
+    notFound
 }
 
 export default error
