@@ -1,10 +1,11 @@
 import db from "../config/database.connection.js";
 
 function getByShortUrl(shortUrl){
-    return db.query(`SELECT url FROM shorts WHERE "shortUrl" = $1`, [shortUrl])
+    return db.query(`UPDATE shorts SET "visitCount" = "visitCount" + 1 WHERE "shortUrl" = $1 RETURNING url`, [shortUrl])
 }
 
 function getById(id){
+    console.log(id)
     return db.query(`SELECT id, "shortUrl", url FROM shorts WHERE id = $1`, [id])
 }
 

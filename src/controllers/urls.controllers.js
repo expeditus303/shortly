@@ -14,7 +14,7 @@ async function openShortUrl(req, res, next) {
 async function getById(req, res, next) {
     try {
         const url = await urlsServices.getById(req)
-
+        console.log(url)
         res.status(StatusCodes.OK).send(url)
     } catch (err) {
         next(err)

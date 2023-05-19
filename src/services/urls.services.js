@@ -14,10 +14,11 @@ async function openShortUrl(req) {
 async function getById(req) {
     const { id } = req.params
 
-    const { rowCount: [url] } = await urlsRepositories.getById(id)
-    if (!url) throw error.notFound("Oops! The short URL you're looking for doesn't exist")
-
-    return url
+    const queryResult = await urlsRepositories.getById(id)
+    if (!queryResult.rowCount) throw error.notFound("Oops! The short URL you're looking for doesn't exist")
+    
+    const [shortUrl] = queryResult.rows
+    return shortUrl
 }
 
 async function create(req, res) {
