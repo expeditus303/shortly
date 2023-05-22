@@ -7,8 +7,8 @@ const configDatabase = {
     connectionString: process.env.DATABASE_URL
 }
 
-const db = new Pool(configDatabase)
+if (process.env.MODE === "prod") configDatabase.ssl = true;
 
-if (process.env.MODE === "prod") db.ssl = true;
+const db = new Pool(configDatabase)
 
 export default db
